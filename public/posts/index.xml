@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Hello Friend</title>
+    
+    
+    
+    <link>/posts/</link>
+    <description>Recent content in Posts on Hello Friend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Oct 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Incidents</title>
+      <link>/posts/incidents/</link>
+      <pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/incidents/</guid>
+      <description>
+        
+          &lt;img src=&#34;/img/photo.jpeg&#34;/&gt;
+          
+        
+        
+        
+          L obiettivo della gestione di un incidente è quella di comunicare a tutta l&#39;azienda cosa sta succedendo
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Hello Friend</title>
+      <link>/posts/hello/</link>
+      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/hello/</guid>
+      <description>
+        
+          &lt;img src=&#34;/img/hello.jpg&#34;/&gt;
+          
+        
+        
+        
+          &#34;Hello, friend?&#34; That&#39;s lame. Maybe I should give you a name?
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>
