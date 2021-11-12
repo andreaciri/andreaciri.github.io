@@ -2,7 +2,7 @@
 title = "How you should handle incidents in your team or organization"
 date = "2021-10-15"
 author = "Andrea Cirigliano"
-cover = "img/photo.jpeg"
+cover = "img/candle.jpeg"
 description = "Setup an incident management in your team or organization"
 +++
 
@@ -37,11 +37,11 @@ It may happen that the incident has an applicative root cause, like a bug or an 
 ### Roles
 
 You are the 1st level and you receive the notification. Congrats, you are the **Incident commander**. 
-You have the responsibility of the incident status, so put the ticket in WIP / acknowledged / whatever so anyone inside your org knows that someone is working on it.
+You have the responsibility of the incident status, so put the ticket in WIP / acknowledged / whatever so anyone inside your org knows that you are working on it.
 
 For small incidents, the incident commander is also the **Communication Lead**, so during the troubleshooting update your ticket with your findings.
 
-Incident commander has also the power to assign roles to new responders. When the incident is large enough the communication lead can be reassigned to a colleague.
+Incident commander has also the power to reassign roles to new responders. When the incident is large enough the communication lead can be reassigned to a colleague.
 
 ### Communication
 
