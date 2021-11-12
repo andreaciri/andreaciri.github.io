@@ -3,7 +3,7 @@
   <head>
     
       <title>
-        Incidents ::
+        How you should handle incidents in your team or organization ::
         Hello Friend — A simple theme for Hugo
       </title>
     
@@ -11,10 +11,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="The purpose of incident management is to communicate to the entire company what is going on, and to protect who is working to resolve it.
+  content="The purpose of incident management is to communicate to your company and your users what is going on, and to protect who is working to resolve it.
 I remember the first times in the office during an incident. Our website is completely down and a crowd is assembling behind the shoulders of a single dev or sysadmin.
- &amp;ldquo;How much it takes to solve it?&amp;rdquo; &amp;ldquo;How much money are we loosing?&amp;rdquo;
- The stress and the pressure can be oppressive."
+ &amp;ldquo;How much it takes to solve it?&amp;rdquo; &amp;ldquo;How much money are we loosing?"
 />
 <meta
   name="keywords"
@@ -49,13 +48,13 @@ I remember the first times in the office during an incident. Our website is comp
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Incidents"/>
-<meta name="twitter:description" content="L obiettivo della gestione di un incidente è quella di comunicare a tutta l&#39;azienda cosa sta succedendo"/>
+<meta name="twitter:title" content="How you should handle incidents in your team or organization"/>
+<meta name="twitter:description" content="Setup an incident management in your team or organization"/>
 
 
 
-<meta property="og:title" content="Incidents" />
-<meta property="og:description" content="L obiettivo della gestione di un incidente è quella di comunicare a tutta l&#39;azienda cosa sta succedendo" />
+<meta property="og:title" content="How you should handle incidents in your team or organization" />
+<meta property="og:description" content="Setup an incident management in your team or organization" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/incidents/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-10-15T00:00:00+00:00" />
@@ -155,7 +154,7 @@ I remember the first times in the office during an incident. Our website is comp
   
 
   <div class="post">
-    <h1 class="post-title">Incidents</h1>
+    <h1 class="post-title">How you should handle incidents in your team or organization</h1>
     <div class="post-meta">
       
         <span class="post-date">
@@ -181,7 +180,7 @@ I remember the first times in the office during an incident. Our website is comp
     
       <figure class="post-cover">
   
-    <img src="/img/photo.jpeg" alt="Incidents"/>
+    <img src="/img/photo.jpeg" alt="How you should handle incidents in your team or organization"/>
   
 
   
@@ -191,7 +190,7 @@ I remember the first times in the office during an incident. Our website is comp
 
     <div class="post-content">
       
-      <p>The purpose of incident management is to communicate to the entire company what is going on, and to protect who is working to resolve it.</p>
+      <p>The purpose of incident management is to communicate to your company and your users what is going on, and to protect who is working to resolve it.</p>
 <p>I remember the first times in the office during an incident. Our website is completely down and a crowd is assembling behind the shoulders of a single dev or sysadmin.</p>
 <blockquote>
 <p>&ldquo;How much it takes to solve it?&rdquo;
@@ -202,14 +201,20 @@ I remember the first times in the office during an incident. Our website is comp
 <h3 id="on-calls">on-calls</h3>
 <p>A good starting point for your incident management is to create an on-call schedule. We organize on-calls per team and level. In every moment a team has a 1st level and a 2nd level on-call.</p>
 <p>The 1st level will be paged first. We use <a href="https://www.pagerduty.com/">PagerDuty</a> for this.
-This is how I configured PagerDuty notifications in case of incident:</p>
+This is how I configured my PagerDuty notifications in case of incident:</p>
 <p><img src="/img/incidents_pd_notifications.png" alt="PagerDuty notifications screenshot" title="PagerDuty notifications screenshot"></p>
-<p>A first push is sent after 2 minutes. If the incident is transient and the ticket autocloses within 2 minutes, my sleep is saved, I don&rsquo;t get paged at all. Further notifications are useful to storm the phone in case I missed the first sound.</p>
+<p>A first push is sent after 2 minutes. If the incident is transient and the ticket autocloses within 2 minutes then my sleep is saved, I don&rsquo;t get paged at all. Further notifications are useful to storm the phone in case I missed the first sound.</p>
 <p>Usually, the 1st level on-call has a broader knowledge and at a higher level. When he is not able to resolve the incident on his own, he has the right to engange the 2nd level.</p>
-<p>Let&rsquo;s make an example. 1st level on-call is a senior fullstack engineer with a good knowledge of the infrastructure and how users traffic travels the CDN, proxies, FE, BE and storages. Most of the times the incident is caused by a network issue, an external dependency or a bad configuration. He is able to resolve these incidents autonomously.</p>
+<p>Let&rsquo;s make an example. 1st level on-call is a senior fullstack engineer with a good knowledge of the infrastructure and how user traffic travels various CDNs, proxies, FEs, BEs and storages. Most of the times the incident is caused by a network issue, an external dependency or a bad configuration. He is able to resolve such incidents autonomously.</p>
 <p>It may happen that the incident has an applicative root cause, like a bug or an unexpected data to process. The 2nd level on-call - a mid level engineer - has less experience in general but is more up-to-date on the development and can identify more easily a resolution like a rollback, an hotfix or a feature toggle.</p>
 <h3 id="roles">Roles</h3>
-<p>La prima cosa per la gestione dell' incidente è una singola source of Truth riconosciuta in tutta l&rsquo;azienda. Se viene dichiarato un incidente ( automatico o manuale) è necessario un singolo tool universalmente riconosciuto in azienda da cui è possibile leggere lo stato dell&rsquo;incidente. Ad esempio se qualcuno ha cominciato a lavorarci.</p>
+<p>You are the 1st level and you receive the notification. Congrats, you are the <strong>Incident commander</strong>.
+You have the responsibility of the incident status, so put the ticket in WIP / acknowledged / whatever so anyone inside your org knows that someone is working on it.</p>
+<p>For small incidents, the incident commander is also the <strong>Communication Lead</strong>, so during the troubleshooting update your ticket with your findings.</p>
+<p>Incident commander has also the power to assign roles to new responders. When the incident is large enough the communication lead can be reassigned to a colleague.</p>
+<h3 id="communication">Communication</h3>
+<p>The first communication about the incident progress should be done on your ticketing system. This should be recognized in your organization as the source of truth.
+The communication lead may need to communicate the progress to other, like product stakeholders or</p>
 
     </div>
     
