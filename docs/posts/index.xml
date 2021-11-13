@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Hello Friend</title>
+    <title>Posts on andreaciri</title>
     
     
     
     <link>/posts/</link>
-    <description>Recent content in Posts on Hello Friend</description>
+    <description>Recent content in Posts on andreaciri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 15 Oct 2021 00:00:00 +0000</lastBuildDate>
@@ -28,25 +28,6 @@
         
         
           Setup an incident management in your team or organization
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Hello Friend</title>
-      <link>/posts/hello/</link>
-      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/hello/</guid>
-      <description>
-        
-          &lt;img src=&#34;/img/hello.jpg&#34;/&gt;
-          
-        
-        
-        
-          &#34;Hello, friend?&#34; That&#39;s lame. Maybe I should give you a name?
           
         
         </description>

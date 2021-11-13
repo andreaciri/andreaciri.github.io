@@ -27,8 +27,8 @@ paginate = 5
 
 [languages]
   [languages.en]
-    title = "Hello Friend"
-    subtitle = "A simple theme for Hugo"
+    title = "andreaciri"
+    subtitle = "my simple blog"
     keywords = ""
     copyright = ""
     menuMore = "Show more"
@@ -56,7 +56,3 @@ paginate = 5
         identifier = "about-me"
         name = "About me"
         url = "/about-me"
-      [[languages.en.menu.main]]
-        identifier = "showcase"
-        name = "Showcase"
-        url = "/showcase"
