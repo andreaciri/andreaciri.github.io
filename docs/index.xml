@@ -9,10 +9,29 @@
     <description>Recent content on andreaciri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 Nov 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How you should handle incidents in your team or organization</title>
+      <link>/posts/incidents/</link>
+      <pubDate>Sun, 14 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/incidents/</guid>
+      <description>
+        
+          &lt;img src=&#34;/img/candle.jpeg&#34;/&gt;
+          
+        
+        
+        
+          Setup an incident management in your team or organization
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>About me</title>
@@ -31,25 +50,6 @@
           Hey there! I&amp;rsquo;m a software engineer working at Subito.
 I wanted to start this blog to share some ideas about software development and my work in a tech company.
 I spent half of my life reading and learning stuff on the Internet. I love technology and knowledge sharing. I like the idea that someone can read my posts and find them somehow useful.
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>How you should handle incidents in your team or organization</title>
-      <link>/posts/incidents/</link>
-      <pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/incidents/</guid>
-      <description>
-        
-          &lt;img src=&#34;/img/candle.jpeg&#34;/&gt;
-          
-        
-        
-        
-          Setup an incident management in your team or organization
           
         
         </description>
