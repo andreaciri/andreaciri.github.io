@@ -12,5 +12,5 @@ I wanted to start this blog to share some ideas about software development and m
 
 I spent half of my life reading and learning stuff on the Internet. I love technology and knowledge sharing. I like the idea that someone can read my posts and find them somehow useful.
 
-
+Reach me out on [LinkedIn](https://www.linkedin.com/in/andreaciri/) or [GitHub](https://github.com/andreaciri).
 
