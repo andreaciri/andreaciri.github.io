@@ -9,10 +9,29 @@
     <description>Recent content in Posts on andreaciri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 14 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 27 Feb 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Story of my empty, 11 years old, 7700$ worth Instagram account</title>
+      <link>/posts/instagram/</link>
+      <pubDate>Sun, 27 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/instagram/</guid>
+      <description>
+        
+          &lt;img src=&#34;/img/instagram-logo-2010.jpeg&#34;/&gt;
+          
+        
+        
+        
+          Story of my empty, 11 years old, 7700$ worth Instagram account.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>How you should handle incidents in your team or organization</title>
@@ -27,7 +46,7 @@
         
         
         
-          Setup an incident management in your team or organization.
+          Setup an incident management for your team or organization.
           
         
         </description>
