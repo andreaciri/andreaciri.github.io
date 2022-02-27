@@ -8,9 +8,9 @@ author = "Andrea Cirigliano"
 
 I'm a software engineer working at [Subito](https://www.subito.it).
 
-I wanted to start this blog to share some ideas about software development and my work in a tech company.
+I wanted to start this blog to share some ideas about software development in a tech company, but also personal projects and random thoughts.
 
-I spent half of my life reading and learning stuff on the Internet. I love technology and knowledge sharing. I like the idea that someone can read my posts and find them somehow useful.
+I like the idea that someone can stumble across one of my posts and find it somehow useful.
 
 Reach me out on [LinkedIn](https://www.linkedin.com/in/andreaciri/) or [GitHub](https://github.com/andreaciri).
 

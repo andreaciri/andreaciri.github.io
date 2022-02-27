@@ -3,10 +3,8 @@ title = "How you should handle incidents in your team or organization"
 date = "2021-11-14"
 author = "Andrea Cirigliano"
 cover = "img/candle.jpeg"
-description = "Setup an incident management in your team or organization."
+description = "Setup an incident management for your team or organization."
 +++
-
-The purpose of incident management is to communicate what is going on, and to ease the burden of who is working to resolve it.
 
 I remember the first times in the office during an incident. Our website is completely down and a crowd is assembling behind the shoulders of a single dev or sysadmin.
 
