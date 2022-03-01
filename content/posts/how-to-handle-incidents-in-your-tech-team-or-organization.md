@@ -1,9 +1,9 @@
 +++
-title = "How you should handle incidents in your team or organization"
+title = "How to handle incidents in your team or organization"
 date = "2021-11-14"
 author = "Andrea Cirigliano"
 cover = "img/candle.jpeg"
-description = "Setup an incident management for your team or organization."
+description = "Setup an incident management for your tech team or organization."
 +++
 
 I remember the first times in the office during an incident. Our website is completely down and a crowd is assembling behind the shoulders of a single dev or sysadmin.
@@ -30,7 +30,7 @@ Usually, the **1st level** on-call has a broader knowledge and at a higher level
 
 Let's make an example. 1st level on-call is a senior fullstack engineer with a good knowledge of the infrastructure and how user traffic travels various CDNs, proxies, FEs, BEs and storages. Most of the times the incident is caused by a network issue, an external dependency or a bad configuration. He is able to resolve such incidents autonomously.
 
-It may happen that the incident has an application level root cause, like a bug or an unexpected data to process. The 2nd level on-call - a mid level engineer - has less experience in general but is more up-to-date on the development and can identify more easily a resolution like a rollback, an hotfix or a feature toggle.
+It may happen that the incident has an application level root cause, like a bug or an unexpected data to process. The 2nd level on-call - a mid level engineer - has less experience in general but is more up-to-date on the development and can identify more easily a resolution like a rollback, a hotfix or a feature toggle.
 
 ### Roles
 
@@ -61,7 +61,7 @@ This is the report of the [global CDN disruption](https://status.fastly.com/inci
 
 ![Faslty global outage report screenshot](/img/fastly_report.png "Faslty global outage report screenshot")
 
-There are very few details but we could understand when the incident was mitigated and what could be the residual effects.
+There are very few details but we could understand when the incident was mitigated and which could be the residual effects.
 
 ### Resolution
 When your incident can be closed, take a break and then reserve some minutes for an **Incident Report**. Most of the report can be extracted from the troubleshooting channel, but make sure you clean it up, remove wrong assumptions and useless information. Use screenshots, personal notes, logs, graphs.  

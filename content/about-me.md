@@ -6,7 +6,7 @@ author = "Andrea Cirigliano"
 
 ### Hey there!
 
-I'm a software engineer working at [Subito](https://www.subito.it).
+I'm an Italian software engineer working at [Subito](https://www.subito.it).
 
 I wanted to start this blog to share some ideas about software development in a tech company, but also personal projects and random thoughts.
 
