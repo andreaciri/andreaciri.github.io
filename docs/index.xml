@@ -9,25 +9,25 @@
     <description>Recent content on andreaciri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Smart grid</title>
+      <title>Enabling Heat Pump Smart Grid Mode With a Raspberry Pi</title>
       <link>/posts/smart-grid-pi/</link>
-      <pubDate>Sat, 22 Oct 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>/posts/smart-grid-pi/</guid>
       <description>
         
-          &lt;img src=&#34;/img/instagram-logo-2010.jpeg&#34;/&gt;
+          &lt;img src=&#34;/img/grid-sun.jpg&#34;/&gt;
           
         
         
         
-          Smart grid
+          How I control my Heat Pump Smart Grid input using a Raspberry Pi
           
         
         </description>
@@ -86,7 +86,7 @@
         
         
           Hey there! #  I&amp;rsquo;m an Italian software engineer working at Subito.
-I wanted to start this blog to share some ideas about software development in a tech company, but also personal projects and random thoughts.
+I wanted to start this blog to share some ideas about software development in a tech company, but also for personal projects and random thoughts.
 I like the idea that someone can stumble across one of my posts and find it somehow useful.
 Reach me out on LinkedIn or GitHub.
           
