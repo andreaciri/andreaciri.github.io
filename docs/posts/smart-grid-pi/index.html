@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Smart grid ::
+        andreaciri — my simple blog
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Since few months, for the first time I live in a house with an electric heat pump. As I always do when I have some kind of new machinery I immediately leaf trough the manual (note: this does not apply to software, for which I read the documentation after several attempts).
+Inside the manual there&amp;rsquo;s a section called smart grid. The idea is to tell the heat pump when there is free electricity, or when the electricity is cheaper, to raise the set point temperature."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/smart-grid-pi/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/img/favicon.png" />
+
+
+<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Smart grid"/>
+<meta name="twitter:description" content="Smart grid"/>
+
+
+
+<meta property="og:title" content="Smart grid" />
+<meta property="og:description" content="Smart grid" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/smart-grid-pi/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-10-22T00:00:00+00:00" /><meta property="og:site_name" content="andreaciri" />
+
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >andreaciri</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about-me">About me</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about-me">About me</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Smart grid</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2022-10-22
+        </span>
+
+        
+          
+        
+      
+
+      
+        <span class="post-author"
+          >— Written by Andrea Cirigliano</span
+        >
+
+
+      
+    </div>
+
+    
+
+    
+      <figure class="post-cover">
+  
+    <img src="/img/instagram-logo-2010.jpeg" alt="Smart grid"/>
+  
+
+  
+</figure>
+
+    
+
+    <div class="post-content">
+      
+      <p>Since few months, for the first time I live in a house with an electric heat pump. As I always do when I have some kind of new machinery I immediately leaf trough the manual (note: this does not apply to software, for which I read the documentation after several attempts).</p>
+<p>Inside the manual there&rsquo;s a section called smart grid. The idea is to tell the heat pump when there is free electricity, or when the electricity is cheaper, to raise the set point temperature. I imagined this as a thermal battery where the house stores energy when it&rsquo;s convenient and releases it when necessary.</p>
+<p>For once a smart feature seemed really smart, so I decided to make it work with my solar panel system. I have a SolarEdge inverter and after a quick search I found it supports Modbus communication over TCP. There are plenty of <a href="https://github.com/nmakel/solaredge_modbus">libraries</a> on GitHub to read real-time data directly from the inverter. Unfortunately, my inverter is connected to the network via WiFi instead of ethernet, and SolarEdge recently <a href="https://github.com/binsentsu/home-assistant-solaredge-modbus/issues/67#issuecomment-998212321">disabled Modbus over WiFi</a> for security reasons. So I had to use the <a href="https://www.solaredge.com/sites/default/files//se_monitoring_api.pdf">SolarEdge APIs</a>, making http requests to their cloud platform.</p>
+<p>The summary of the project
+<img src="/img/smart-grid-pi-diagram.png" alt="Diagram of the project" title="Diagram of the project"></p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+            
+              <span class="button next">
+                <a href="/posts/story-of-my-empty-11-years-old-7700-dollars-worth-instagram-account/">
+                  <span class="button__text">Story of my empty, 11 years old, 7700$ worth Instagram account</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >andreaciri</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span
+          >© 2022 Powered by
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
+        >
+        <span
+          >Theme created by
+          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
+        >
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

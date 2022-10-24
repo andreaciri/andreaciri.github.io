@@ -8,7 +8,7 @@ author = "Andrea Cirigliano"
 
 I'm an Italian software engineer working at [Subito](https://www.subito.it).
 
-I wanted to start this blog to share some ideas about software development in a tech company, but also personal projects and random thoughts.
+I wanted to start this blog to share some ideas about software development in a tech company, but also for personal projects and random thoughts.
 
 I like the idea that someone can stumble across one of my posts and find it somehow useful.
 
