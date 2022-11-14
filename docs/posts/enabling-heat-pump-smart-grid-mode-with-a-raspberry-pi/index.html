@@ -3,7 +3,7 @@
   <head>
     
       <title>
-        Enabling Heat Pump Smart Grid Mode With a Raspberry Pi ::
+        Enabling my Heat Pump Smart Grid Mode with a Raspberry Pi ::
         andreaciri — my simple blog
       </title>
     
@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="For the first time, I live in a house with an electric heat pump (natural gas heaters are still the most common here in Italy).
+  content="For the first time, I live in a house with an electric heat pump (natural gas boilers are still the most common here in Italy).
 As I always do when I have some kind of new machinery I immediately leaf through the manual. Note: this does not apply to software, for which I read the documentation only after several failures 😅.
 Inside the manual there&amp;rsquo;s a section called Smart Grid Ready."
 />
@@ -48,17 +48,17 @@ Inside the manual there&amp;rsquo;s a section called Smart Grid Ready."
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Enabling Heat Pump Smart Grid Mode With a Raspberry Pi"/>
+<meta name="twitter:title" content="Enabling my Heat Pump Smart Grid Mode with a Raspberry Pi"/>
 <meta name="twitter:description" content="How I control my Heat Pump Smart Grid input using a Raspberry Pi"/>
 
 
 
-<meta property="og:title" content="Enabling Heat Pump Smart Grid Mode With a Raspberry Pi" />
+<meta property="og:title" content="Enabling my Heat Pump Smart Grid Mode with a Raspberry Pi" />
 <meta property="og:description" content="How I control my Heat Pump Smart Grid input using a Raspberry Pi" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/enabling-heat-pump-smart-grid-mode-with-a-raspberry-pi/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-10-24T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-10-24T00:00:00+00:00" /><meta property="og:site_name" content="andreaciri" />
+<meta property="article:published_time" content="2022-11-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-11-14T00:00:00+00:00" /><meta property="og:site_name" content="andreaciri" />
 
 
 
@@ -146,11 +146,11 @@ Inside the manual there&amp;rsquo;s a section called Smart Grid Ready."
   
 
   <div class="post">
-    <h1 class="post-title">Enabling Heat Pump Smart Grid Mode With a Raspberry Pi</h1>
+    <h1 class="post-title">Enabling my Heat Pump Smart Grid Mode with a Raspberry Pi</h1>
     <div class="post-meta">
       
         <span class="post-date">
-          2022-10-24
+          2022-11-14
         </span>
 
         
@@ -172,7 +172,7 @@ Inside the manual there&amp;rsquo;s a section called Smart Grid Ready."
     
       <figure class="post-cover">
   
-    <img src="/img/grid-sun.jpg" alt="Enabling Heat Pump Smart Grid Mode With a Raspberry Pi"/>
+    <img src="/img/grid-sun.jpg" alt="Enabling my Heat Pump Smart Grid Mode with a Raspberry Pi"/>
   
 
   
@@ -184,27 +184,38 @@ Inside the manual there&amp;rsquo;s a section called Smart Grid Ready."
       
       <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<p>For the first time, I live in a house with an electric heat pump (natural gas heaters are still the most common here in Italy).<br>
+<p>For the first time, I live in a house with an electric heat pump (natural gas boilers are still the most common here in Italy).<br>
 As I always do when I have some kind of new machinery I immediately leaf through the manual. Note: this does not apply to software, for which I read the documentation only after several failures 😅.</p>
 <p>Inside the manual there&rsquo;s a section called <em>Smart Grid Ready</em>. The idea is to simply tell the heat pump when there is free electricity or when the electricity is cheaper, to raise the set point temperature.<br>
 I imagined this as a thermal battery where the house stores energy when it&rsquo;s convenient and releases it when necessary.</p>
 <p><img src="/img/smart-grid-ready-manual.jpg" alt="Smart Grid Ready Manual Section" title="Smart Grid Ready Manual Section">
-<em>Smart Grid Ready pinout on the heat pump manual. I used the <strong>Switch-on recommendation</strong> mode.</em></p>
+<em>Smart Grid Ready pinout on the heat pump manual. I used the <strong>Switch-on recommendation</strong> contact.</em></p>
 <p>For once a smart feature seemed really smart, so I decided to make it work with my solar panel system.<br>
 I have a SolarEdge inverter and after a quick search, I found it supports Modbus communication over TCP. There are plenty of <a href="https://github.com/nmakel/solaredge_modbus">libraries</a> on GitHub to read real-time data directly from the inverter.<br>
-Unfortunately, my inverter is connected to the network via WiFi instead of Ethernet, and SolarEdge recently <a href="https://github.com/binsentsu/home-assistant-solaredge-modbus/issues/67#issuecomment-998212321">disabled Modbus over WiFi</a> for security reasons. So I had to use the <a href="https://www.solaredge.com/sites/default/files//se_monitoring_api.pdf">SolarEdge APIs</a>, making http requests to their cloud platform.</p>
+Unfortunately, my inverter is connected to the network via WiFi instead of Ethernet, and SolarEdge <a href="https://github.com/binsentsu/home-assistant-solaredge-modbus/issues/67">disabled Modbus over WiFi</a> for some firmware versions. So I had to use the <a href="https://www.solaredge.com/sites/default/files//se_monitoring_api.pdf">SolarEdge APIs</a>, making http requests to their cloud platform.</p>
 <p>This is a sketch of how it works:</p>
 <p><img src="/img/smart-grid-pi-diagram2.png" alt="Diagram of the project" title="Diagram of the project"></p>
 <p>I wrote a program in go that runs on the Raspberry. It&rsquo;s <a href="https://github.com/andreaciri/smart-grid-pi">available on my GitHub</a>. It requests the current power flow to SolarEdge and commands a relay connected to the Smart Grid input of the heat pump.<br>
 SolarEdge only offers 300 daily requests to their APIs. Running the script only during daylight I can collect a sample every 2 minutes, enough for my goal.</p>
-<p>Since my heat pump uses up to 2 kW when heating water, I used this value as the threshold to consider the power surplus enough for the smart grid toggle.</p>
+<p>My heat pump uses up to 2 kW when producing domestic hot water, so I used this value as the threshold to consider the power surplus enough for the smart grid toggle.</p>
 <p>I also attached a LED semaphore to the Pi:</p>
 <ul>
 <li>🔴 Red: no production at all</li>
 <li>🟡 Yellow: production, but not enough</li>
 <li>🟢 Green: enough free electricity, smart grid ON 🤟</li>
 </ul>
-<p>This is a picture of the Raspberry with the semaphore and the relay, running inside a cotton buds plastic case on top of the heat pump internal unit:</p>
+<p><br>
+Here&rsquo;s a picture of the Raspberry with the semaphore and the relay, running inside a cotton buds plastic case on top of the heat pump internal unit:</p>
+<p><img src="/img/raspberrypi1.jpg" alt="Photo of the Raspberry Pi" title="Raspberry Pi"></p>
+<p><br>
+Using the smart grid input I was able to move some spikes of consumption from the night to the day. I&rsquo;m still evaluating if the pattern is consistent.</p>
+<p><img src="/img/prod&amp;cons.png" alt="Production and consumption before and after the smart grid input" title="Production and consumption"></p>
+<p><br>
+That&rsquo;s all. Here some improvements I may try in the future:</p>
+<ul>
+<li>update the inverter firmware to enable Modbus over TCP and get real-time data instead of http requests;</li>
+<li>read from the Raspberry if the heat pump is actually active or not, to improve the algorithm.</li>
+</ul>
 
     </div>
     
