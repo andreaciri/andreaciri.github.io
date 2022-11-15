@@ -40,7 +40,7 @@ There are some comments, though.
 
 I immediately notice that almost every person that left a comment during all these years has a username similar to mine.
 
-They are asking me to give them my username. My username is simpler compared to their one. Has only four letters, no symbols or digits. Just a simple, lowercase, four letter word.
+They are asking me to give them my username. My username is simpler compared to their one. It has only four letters, no symbols or digits. Just a simple, lowercase, four letter word.
 
 Someone is mad at me because I took his real life nickname and then I never used Instagram. 
 

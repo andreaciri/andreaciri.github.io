@@ -27,7 +27,7 @@ This is a sketch of how it works:
 ![Diagram of the project](/img/smart-grid-pi-diagram2.png "Diagram of the project")
 
 
-I wrote a program in go that runs on the Raspberry. It's [available on my GitHub](https://github.com/andreaciri/smart-grid-pi). It requests the current power flow to SolarEdge and commands a relay connected to the Smart Grid input of the heat pump.\
+I wrote a program in go that runs on the Raspberry. It's [available on my GitHub](https://github.com/andreaciri/smart-grid-pi). It requests the current power flow to SolarEdge and controls a relay connected to the Smart Grid input of the heat pump.\
 SolarEdge only offers 300 daily requests to their APIs. Running the script only during daylight I can collect a sample every 2 minutes, enough for my goal.
 
 
@@ -49,7 +49,7 @@ Using the smart grid input I was able to move some spikes of consumption from th
 ![Production and consumption before and after the smart grid input](/img/prod&cons.png "Production and consumption")
 
 \
-That's all. Here some improvements I may try in the future:
+That's all. Here's some improvements I may try in the future:
 - update the inverter firmware to enable Modbus over TCP and get real-time data instead of http requests;
 - read from the Raspberry if the heat pump is actually active or not, to improve the algorithm.
 

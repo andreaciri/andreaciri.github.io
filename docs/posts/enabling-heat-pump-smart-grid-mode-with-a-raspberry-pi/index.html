@@ -195,7 +195,7 @@ I have a SolarEdge inverter and after a quick search, I found it supports Modbus
 Unfortunately, my inverter is connected to the network via WiFi instead of Ethernet, and SolarEdge <a href="https://github.com/binsentsu/home-assistant-solaredge-modbus/issues/67">disabled Modbus over WiFi</a> for some firmware versions. So I had to use the <a href="https://www.solaredge.com/sites/default/files//se_monitoring_api.pdf">SolarEdge APIs</a>, making http requests to their cloud platform.</p>
 <p>This is a sketch of how it works:</p>
 <p><img src="/img/smart-grid-pi-diagram2.png" alt="Diagram of the project" title="Diagram of the project"></p>
-<p>I wrote a program in go that runs on the Raspberry. It&rsquo;s <a href="https://github.com/andreaciri/smart-grid-pi">available on my GitHub</a>. It requests the current power flow to SolarEdge and commands a relay connected to the Smart Grid input of the heat pump.<br>
+<p>I wrote a program in go that runs on the Raspberry. It&rsquo;s <a href="https://github.com/andreaciri/smart-grid-pi">available on my GitHub</a>. It requests the current power flow to SolarEdge and controls a relay connected to the Smart Grid input of the heat pump.<br>
 SolarEdge only offers 300 daily requests to their APIs. Running the script only during daylight I can collect a sample every 2 minutes, enough for my goal.</p>
 <p>My heat pump uses up to 2 kW when producing domestic hot water, so I used this value as the threshold to consider the power surplus enough for the smart grid toggle.</p>
 <p>I also attached a LED semaphore to the Pi:</p>
@@ -211,7 +211,7 @@ Here&rsquo;s a picture of the Raspberry with the semaphore and the relay, runnin
 Using the smart grid input I was able to move some spikes of consumption from the night to the day. I&rsquo;m still evaluating if the pattern is consistent.</p>
 <p><img src="/img/prod&amp;cons.png" alt="Production and consumption before and after the smart grid input" title="Production and consumption"></p>
 <p><br>
-That&rsquo;s all. Here some improvements I may try in the future:</p>
+That&rsquo;s all. Here&rsquo;s some improvements I may try in the future:</p>
 <ul>
 <li>update the inverter firmware to enable Modbus over TCP and get real-time data instead of http requests;</li>
 <li>read from the Raspberry if the heat pump is actually active or not, to improve the algorithm.</li>
