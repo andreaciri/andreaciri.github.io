@@ -37,7 +37,7 @@ The query can be a regular expression, so for example you can provide `web-\w` t
 ```bash
 kubectl rollout restart deploy/my-app
 ```
-If you want to refresh some configuration, or your deployment is having trouble, it may be useful to refresh it spawning new pods and deleting the old ones. There will be no downtime during the restart. I find this very useful when I get paged by a service during the on-call shift and I don't have any clue about what's going on (https://xkcd.com/1495/).
+If you want to refresh some configuration, or your deployment is having trouble, it may be useful to refresh it spawning new pods and deleting the old ones. There will be no downtime during the restart. I find this very useful when I get paged by a service during the on-call shift and I don't have any clue about what's going on (more details on [xkcd](https://xkcd.com/1495/)).
 
 
 ## Port forward to a pod
