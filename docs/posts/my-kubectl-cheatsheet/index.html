@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        My kubectl Cheatsheet ::
+        andreaciri — my simple blog
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="If Kubernetes is the jungle of modern software engineers, then kubectl is our Swiss army knife. It&amp;rsquo;s an essential tool to inspect and troubleshoot our deployments. In this post I collected the commands and the tools that I find more useful.
+Find a pod by substring # kubectl get pods | grep my-app You can also filter your app using kubectl -l app=my-app, but I find grep more useful because I never remember the full name correctly."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/my-kubectl-cheatsheet/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/img/favicon.png" />
+
+
+<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="My kubectl Cheatsheet"/>
+<meta name="twitter:description" content="A collection of commands and tools I use to play with k8s."/>
+
+
+
+<meta property="og:title" content="My kubectl Cheatsheet" />
+<meta property="og:description" content="A collection of commands and tools I use to play with k8s." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/my-kubectl-cheatsheet/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-07-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-07-14T00:00:00+00:00" /><meta property="og:site_name" content="andreaciri" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >andreaciri</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about-me">About me</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about-me">About me</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">My kubectl Cheatsheet</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2023-07-14
+        </span>
+
+        
+          
+        
+      
+
+      
+        <span class="post-author"
+          >— Written by Andrea Cirigliano</span
+        >
+
+
+      
+    </div>
+
+    
+
+    
+      <figure class="post-cover">
+  
+    <img src="/img/k8s.webp" alt="My kubectl Cheatsheet"/>
+  
+
+  
+</figure>
+
+    
+
+    <div class="post-content">
+      
+      <p>If Kubernetes is the jungle of modern software engineers, then kubectl is our Swiss army knife. It&rsquo;s an essential tool to inspect and troubleshoot our deployments.
+In this post I collected the commands and the tools that I find more useful.</p>
+<h2 id="find-a-pod-by-substring">
+  Find a pod by substring
+  <a href="#find-a-pod-by-substring" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get pods | grep my-app
+</span></span></code></pre></div><p>You can also filter your app using <code>kubectl -l app=my-app</code>, but I find grep more useful because I never remember the full name correctly.</p>
+<h2 id="show-pod-logs">
+  Show pod logs
+  <a href="#show-pod-logs" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl logs -f my-pod
+</span></span></code></pre></div><p>Once I find the name of the pod I usually inspect his log tail.</p>
+<h2 id="show-logs-from-multiple-pods">
+  Show logs from multiple pods
+  <a href="#show-logs-from-multiple-pods" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>stern pod-query
+</span></span></code></pre></div><p>Sometimes you want to see all the logs of an app with multiple replicas. In this case <a href="https://github.com/stern/stern">stern</a> is a fantastic tool that allows you to tail multiple pods at the same time.
+The query can be a regular expression, so for example you can provide <code>web-\w</code> to tail <code>web-backend</code> and <code>web-frontend</code>.</p>
+<h2 id="restart-a-deploy">
+  Restart a deploy
+  <a href="#restart-a-deploy" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl rollout restart deploy/my-app
+</span></span></code></pre></div><p>If you want to refresh some configuration, or your deployment is having trouble, it may be useful to refresh it spawning new pods and deleting the old ones. There will be no downtime during the restart. I find this very useful when I get paged by a service during the on-call shift and I don&rsquo;t have any clue about what&rsquo;s going on (<a href="https://xkcd.com/1495/)">https://xkcd.com/1495/)</a>.</p>
+<h2 id="port-forward-to-a-pod">
+  Port forward to a pod
+  <a href="#port-forward-to-a-pod" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl port-forward my-pod 28015:9989
+</span></span></code></pre></div><p>This command makes the port 9989 of <code>my-pod</code> available at <code>localhost:28015</code>. This is super useful to debug an endpoint that is not easily accessible through an ingress.</p>
+<h2 id="create-a-job-from-a-cronjob">
+  Create a job from a cronjob:
+  <a href="#create-a-job-from-a-cronjob" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl create job --from<span style="color:#f92672">=</span>cronjob/my-cronjob job-name
+</span></span></code></pre></div><p>Sometimes you have a scheduled cronjob that you want to start manually in that moment. This command create a job from the cronjob.</p>
+<h2 id="suspend--resume-a-cronjob">
+  Suspend / resume a cronjob
+  <a href="#suspend--resume-a-cronjob" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl patch cronjobs my-cronjob -p <span style="color:#e6db74">&#39;{&#34;spec&#34;:{&#34;suspend&#34;:true}}&#39;</span>
+</span></span></code></pre></div><p>This command let&rsquo;s you suspend or resume the executions of a k8s cronjob.</p>
+<blockquote>
+<p>⚠️ <strong>Warning</strong></p>
+<p>Executions that are suspended during their scheduled time count as missed jobs <a href="https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/#suspend">[1]</a>.</p>
+<p>If there are more than 100 missed schedules, then the jobs will not start, even after restoring <code>suspend</code> to <code>false</code> <a href="https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-job-limitations">[2]</a>. In that case you need to delete and recreate the cronjob.</p>
+</blockquote>
+<h2 id="create-a-basic-auth-secret">
+  Create a Basic Auth secret
+  <a href="#create-a-basic-auth-secret" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Sometimes you want to protect your ingress with a basic authentication.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create file with secret (type-in your password)</span>
+</span></span><span style="display:flex;"><span>htpasswd -c auth username
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create k8s secret</span>
+</span></span><span style="display:flex;"><span>kubectl create secret generic my-app-basic-auth --from-file<span style="color:#f92672">=</span>auth
+</span></span></code></pre></div><p>The secret can now be used in the annotation of your nginx ingress:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">annotations</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ingress</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">nginx.ingress.kubernetes.io/auth-type</span>: <span style="color:#ae81ff">basic</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">nginx.ingress.kubernetes.io/auth-secret</span>: <span style="color:#ae81ff">my-app-basic-auth</span>
+</span></span></code></pre></div><h2 id="k9s">
+  k9s
+  <a href="#k9s" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>You can perform many of the above actions using <a href="https://k9scli.io/">k9s</a>, a terminal based UI to interact with your Kubernetes clusters. Nevertheless, I prefer <code>kubectl</code> most of the times.</p>
+<h2 id="kubectx">
+  kubectx
+  <a href="#kubectx" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p><a href="https://github.com/ahmetb/kubectx">kubectx</a> is a tool to switch between contexts (clusters) on kubectl faster. Contexts are defined in your <code>~/.kube/config</code> file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># install</span>
+</span></span><span style="display:flex;"><span>brew install kubectx
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># switch to development</span>
+</span></span><span style="display:flex;"><span>kubectx development
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># switch to production</span>
+</span></span><span style="display:flex;"><span>kubectx production
+</span></span></code></pre></div><h2 id="multiple-kubectl-versions">
+  Multiple kubectl versions
+  <a href="#multiple-kubectl-versions" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Your kubectl client version should always match the server version to ensure full compatibility.
+If you have to deal with different clusters with different version, you may want to switch easily between different client version.</p>
+<p>To do this I use <a href="https://asdf-vm.com/">asdf</a>, a multiple runtime versions manager:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># install</span>
+</span></span><span style="display:flex;"><span>brew install asdf
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># add kubectl plugin</span>
+</span></span><span style="display:flex;"><span>asdf plugin-add kubectl https://github.com/asdf-community/asdf-kubectl.git
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># install a version</span>
+</span></span><span style="display:flex;"><span>asdf install kubectl 1.24.14
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># install another version</span>
+</span></span><span style="display:flex;"><span>asdf install kubectl 1.27.3
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># select version</span>
+</span></span><span style="display:flex;"><span>asdf global kubectl 1.27.3
+</span></span></code></pre></div>
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+            
+              <span class="button next">
+                <a href="/posts/enabling-heat-pump-smart-grid-mode-with-a-raspberry-pi/">
+                  <span class="button__text">Enabling my Heat Pump Smart Grid Mode with a Raspberry Pi</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >andreaciri</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span
+          >© 2023 Powered by
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
+        >
+        <span
+          >Theme created by
+          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
+        >
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

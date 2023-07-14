@@ -9,10 +9,29 @@
     <description>Recent content in Posts on andreaciri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Jul 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>My kubectl Cheatsheet</title>
+      <link>/posts/my-kubectl-cheatsheet/</link>
+      <pubDate>Fri, 14 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/my-kubectl-cheatsheet/</guid>
+      <description>
+        
+          &lt;img src=&#34;/img/k8s.webp&#34;/&gt;
+          
+        
+        
+        
+          A collection of commands and tools I use to play with k8s.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Enabling my Heat Pump Smart Grid Mode with a Raspberry Pi</title>

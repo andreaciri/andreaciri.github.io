@@ -65,7 +65,6 @@ Inside the manual there&amp;rsquo;s a section called Smart Grid Ready."
 
 
 
-
   </head>
   <body class="dark-theme">
     <div class="container">
@@ -190,7 +189,7 @@ As I always do when I have some kind of new machinery I immediately leaf through
 I imagined this as a thermal battery where the house stores energy when it&rsquo;s convenient and releases it when necessary.</p>
 <p><img src="/img/smart-grid-ready-manual.jpg" alt="Smart Grid Ready Manual Section" title="Smart Grid Ready Manual Section">
 <em>Smart Grid Ready pinout on the heat pump manual. I used the <strong>Switch-on recommendation</strong> contact.</em></p>
-<p>For once a smart feature seemed really smart, so I decided to make it work with my solar panel system.<br>
+<p>For once, a smart feature seemed really smart, so I decided to make it work with my solar panel system.<br>
 I have a SolarEdge inverter and after a quick search, I found it supports Modbus communication over TCP. There exist <a href="https://github.com/nmakel/solaredge_modbus">libraries</a> on GitHub to read real-time data directly from the inverter.<br>
 Unfortunately, my inverter is connected to the network via WiFi instead of Ethernet, and SolarEdge <a href="https://github.com/binsentsu/home-assistant-solaredge-modbus/issues/67">disabled Modbus over WiFi</a> for some firmware versions. So I had to use the <a href="https://www.solaredge.com/sites/default/files//se_monitoring_api.pdf">SolarEdge APIs</a>, making http requests to their cloud platform.</p>
 <p>This is a sketch of how it works:</p>
@@ -211,11 +210,13 @@ Here&rsquo;s a picture of the Raspberry with the semaphore and the relay, runnin
 Using the smart grid input I was able to move some spikes of consumption from the night to the day. I&rsquo;m still evaluating if the pattern is consistent.</p>
 <p><img src="/img/prod&amp;cons.png" alt="Production and consumption before and after the smart grid input" title="Production and consumption"></p>
 <p><br>
-That&rsquo;s all. Here&rsquo;s some improvements I may try in the future:</p>
+Here&rsquo;s some improvements I may try in the future:</p>
 <ul>
-<li>update the inverter firmware to enable Modbus over TCP and get real-time data instead of http requests;</li>
+<li>update the inverter firmware to enable Modbus over TCP and get data from the inverter, avoiding their cloud service;</li>
 <li>read from the Raspberry if the heat pump is actually active or not, to improve the algorithm.</li>
 </ul>
+<p><br>
+That&rsquo;s all! 👋</p>
 
     </div>
     
@@ -228,6 +229,13 @@ That&rsquo;s all. Here&rsquo;s some improvements I may try in the future:</p>
             <hr />
           </div>
           <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/my-kubectl-cheatsheet/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">My kubectl Cheatsheet</span>
+                </a>
+              </span>
             
             
               <span class="button next">
@@ -275,7 +283,7 @@ That&rsquo;s all. Here&rsquo;s some improvements I may try in the future:</p>
 
       <div class="copyright">
         <span
-          >© 2022 Powered by
+          >© 2023 Powered by
           <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
         >
         <span
