@@ -51,13 +51,13 @@ This command makes the port 9989 of `my-pod` available at `localhost:28015`. Thi
 kubectl create job --from=cronjob/my-cronjob job-name
 ```
 
-Sometimes you have a scheduled cronjob that you want to start manually in that moment. This command create a job from the cronjob.
+Sometimes you have a scheduled cronjob that you want to start manually in that moment. This command creates a job from the cronjob.
 
 ## Suspend / resume a cronjob
 ```bash
 kubectl patch cronjobs my-cronjob -p '{"spec":{"suspend":true}}'
 ```
-This command let's you suspend or resume the executions of a k8s cronjob.
+This command lets you suspend or resume the executions of a k8s cronjob.
 
 > ⚠️ **Warning**
 >

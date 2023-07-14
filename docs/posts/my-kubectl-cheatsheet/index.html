@@ -218,13 +218,13 @@ The query can be a regular expression, so for example you can provide <code>web-
   <a href="#create-a-job-from-a-cronjob" class="h-anchor" aria-hidden="true">#</a>
 </h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl create job --from<span style="color:#f92672">=</span>cronjob/my-cronjob job-name
-</span></span></code></pre></div><p>Sometimes you have a scheduled cronjob that you want to start manually in that moment. This command create a job from the cronjob.</p>
+</span></span></code></pre></div><p>Sometimes you have a scheduled cronjob that you want to start manually in that moment. This command creates a job from the cronjob.</p>
 <h2 id="suspend--resume-a-cronjob">
   Suspend / resume a cronjob
   <a href="#suspend--resume-a-cronjob" class="h-anchor" aria-hidden="true">#</a>
 </h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl patch cronjobs my-cronjob -p <span style="color:#e6db74">&#39;{&#34;spec&#34;:{&#34;suspend&#34;:true}}&#39;</span>
-</span></span></code></pre></div><p>This command let&rsquo;s you suspend or resume the executions of a k8s cronjob.</p>
+</span></span></code></pre></div><p>This command lets you suspend or resume the executions of a k8s cronjob.</p>
 <blockquote>
 <p>⚠️ <strong>Warning</strong></p>
 <p>Executions that are suspended during their scheduled time count as missed jobs <a href="https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/#suspend">[1]</a>.</p>
