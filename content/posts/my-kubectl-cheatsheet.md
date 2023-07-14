@@ -22,7 +22,7 @@ You can also filter your app using `kubectl -l app=my-app`, but I find grep more
 ```bash
 kubectl logs -f my-pod
 ```
-Once I find the name of the pod I usually inspect his log tail.
+Once I find the name of the pod, I usually inspect its log tail.
 
 
 ## Show logs from multiple pods
