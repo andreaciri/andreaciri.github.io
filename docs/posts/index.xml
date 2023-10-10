@@ -9,10 +9,29 @@
     <description>Recent content in Posts on andreaciri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 09 Sep 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Checkup Your Postgres Database</title>
+      <link>/posts/checkup-your-postgres-database/</link>
+      <pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/checkup-your-postgres-database/</guid>
+      <description>
+        
+          &lt;img src=&#34;/img/pg-checkup.png&#34;/&gt;
+          
+        
+        
+        
+          A collection of utility queries to checkup your Postgres database.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>My kubectl Cheatsheet</title>

@@ -201,12 +201,24 @@ In this post I collected the commands and the tools that I find more useful.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>stern pod-query
 </span></span></code></pre></div><p>Sometimes you want to see all the logs of an app with multiple replicas. In this case <a href="https://github.com/stern/stern">stern</a> is a fantastic tool that allows you to tail multiple pods at the same time.
 The query can be a regular expression, so for example you can provide <code>web-\w</code> to tail <code>web-backend</code> and <code>web-frontend</code>.</p>
+<h2 id="edit-config-map">
+  Edit config map
+  <a href="#edit-config-map" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl edit config map my-app
+</span></span></code></pre></div><p>I use this command to change quickly an environment variable of my application. Depending on your app, you may need to restart it in order to read the new value. See the next command.</p>
 <h2 id="restart-a-deploy">
   Restart a deploy
   <a href="#restart-a-deploy" class="h-anchor" aria-hidden="true">#</a>
 </h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl rollout restart deploy/my-app
-</span></span></code></pre></div><p>If you want to refresh some configuration, or your deployment is having trouble, it may be useful to refresh it spawning new pods and deleting the old ones. There will be no downtime during the restart. I find this very useful when I get paged by a service during the on-call shift and I don&rsquo;t have any clue about what&rsquo;s going on (more details on <a href="https://xkcd.com/1495/">xkcd</a>).</p>
+</span></span></code></pre></div><p>If you want to refresh some configuration, or your deployment is having trouble, it may be useful to refresh it spawning new pods and deleting the old ones. There will be no downtime during the restart. I keep this as my last chance when I get paged by a service during the on-call shift and I don&rsquo;t have any clue about what&rsquo;s going on (more details on <a href="https://xkcd.com/1495/">xkcd</a>).</p>
+<h2 id="get-a-shell-to-a-running-pod">
+  Get a shell to a running pod
+  <a href="#get-a-shell-to-a-running-pod" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl exec -it my-pod -- sh
+</span></span></code></pre></div><p>Sometimes you need to inspect the running container from the inside. This command Gives you an interactive shell.</p>
 <h2 id="port-forward-to-a-pod">
   Port forward to a pod
   <a href="#port-forward-to-a-pod" class="h-anchor" aria-hidden="true">#</a>
@@ -289,6 +301,13 @@ If you have to deal with different clusters with different version, you may want
             <hr />
           </div>
           <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/checkup-your-postgres-database/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Checkup Your Postgres Database</span>
+                </a>
+              </span>
             
             
               <span class="button next">

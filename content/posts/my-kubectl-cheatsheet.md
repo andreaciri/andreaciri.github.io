@@ -33,12 +33,23 @@ Sometimes you want to see all the logs of an app with multiple replicas. In this
 The query can be a regular expression, so for example you can provide `web-\w` to tail `web-backend` and `web-frontend`.
 
 
+## Edit config map
+```bash
+kubectl edit config map my-app
+```
+I use this command to change quickly an environment variable of my application. Depending on your app, you may need to restart it in order to read the new value. See the next command.
+
 ## Restart a deploy
 ```bash
 kubectl rollout restart deploy/my-app
 ```
-If you want to refresh some configuration, or your deployment is having trouble, it may be useful to refresh it spawning new pods and deleting the old ones. There will be no downtime during the restart. I find this very useful when I get paged by a service during the on-call shift and I don't have any clue about what's going on (more details on [xkcd](https://xkcd.com/1495/)).
+If you want to refresh some configuration, or your deployment is having trouble, it may be useful to refresh it spawning new pods and deleting the old ones. There will be no downtime during the restart. I keep this as my last chance when I get paged by a service during the on-call shift and I don't have any clue about what's going on (more details on [xkcd](https://xkcd.com/1495/)).
 
+## Get a shell to a running pod
+```bash
+kubectl exec -it my-pod -- sh
+```
+Sometimes you need to inspect the running container from the inside. This command Gives you an interactive shell.
 
 ## Port forward to a pod
 ```bash
